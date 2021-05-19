@@ -1,0 +1,9 @@
+:root{
+	--primary-color: #1e1e1e;
+	--color-white: #fff;
+	--color-word: #a7a7a7;
+}
+
+.App{
+	background-color: var(--primary-color);
+}

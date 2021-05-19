@@ -1,9 +1,8 @@
 import './Search.sass'
-import useFetch from '../../Hooks/useFetch'
 
-export default function Search() {
-	const data = useFetch('https://api.spotify.com/v1/artists/')
+export default function Search({categories}) {
 	// console.log(state)
+
 	return (
 		<div>
 			<input type="text" />

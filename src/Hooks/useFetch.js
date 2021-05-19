@@ -1,9 +1,9 @@
-import { useContext ,useState, useEffect } from 'react'
+import { useContext , useEffect, useState } from 'react'
 import AppContext from '../context/AppContext'
 
 function useFetch(url) {
-	const [token, setToken] = useState('')
 	const { state } = useContext(AppContext)
+	const [ response, setResponse ] = useState([])
 
 	useEffect(()=>{
 		fetch('https://accounts.spotify.com/api/token',{
@@ -16,16 +16,15 @@ function useFetch(url) {
 		})
 			.then(data => data.json())
 			.then(tokenResponse => {
-				setToken(tokenResponse)
-				console.log(tokenResponse.access_token)
 				fetch(url, {
 					method: 'GET',
-					headers: { 'Authorization' : token}
+					headers: { 'Authorization' : 'Bearer ' + tokenResponse.access_token}
 				})
 					.then(searchResponse => searchResponse.json())
-					.then(search => console.log(search))
+					.then(search => setResponse(search))
 			})
-	},[url, state])
+	}, [url, state])
+	return response
 }
 
 export default useFetch
