@@ -1,4 +1,4 @@
-import './Categorie.sass'
+import './Categorie.scss'
 
 export default function Categories({ categorie }) {
 	// debugger

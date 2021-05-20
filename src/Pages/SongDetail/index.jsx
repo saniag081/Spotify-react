@@ -1,4 +1,4 @@
-import './SongDetail.sass'
+import './SongDetail.scss'
 
 export default function SongDetail() {
 	return (

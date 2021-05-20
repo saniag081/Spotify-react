@@ -1,6 +1,6 @@
 import useFetch from '../../Hooks/useFetch'
 import ListCategories from '../../components/ListCategories/index'
-import './Home.sass'
+import './Home.scss'
 
 export default function Home() {
 	const { categories } = useFetch('https://api.spotify.com/v1/browse/categories?locale=sv_US')
